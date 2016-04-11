@@ -6,7 +6,9 @@ module.exports = function(grunt) {
     },
     concat: {
       dist: {
-          src: ['src/main.js'],
+          src: ['src/wrappers/start.js']
+            .concat(['src/js/main.js'])
+            .concat(['src/wrappers/end.js']),
           dest: 'dist/<%= pkg.name %>.js',
           nonull: true
       }

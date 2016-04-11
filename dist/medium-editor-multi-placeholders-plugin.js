@@ -1,3 +1,18 @@
+(function (root, factory) {
+  'use strict';
+  if (typeof module === 'object') {
+    module.exports = factory;
+  } else if (typeof define === 'function' && define.amd) {
+    define(function () {
+      return factory;
+    });
+  } else {
+    root.MediumEditor = factory;
+  }
+}(this, function () {
+
+  'use strict';
+
 var MediumEditorMultiPlaceholders = MediumEditor.Extension.extend({
   name: 'multi_placeholder',
   init:  function() {
@@ -42,7 +57,6 @@ var MediumEditorMultiPlaceholders = MediumEditor.Extension.extend({
   },
 
   updatePlaceholder: function (el) {
-      // if one of these element ('img, blockquote, ul, ol') are found inside the given element, we won't display the placeholder
       if (el.textContent === '') {
           return this.showPlaceholder(el);
       }
@@ -60,3 +74,6 @@ var MediumEditorMultiPlaceholders = MediumEditor.Extension.extend({
     this.subscribe('externalInteraction', this.updateAllPlaceholders.bind(this));
   }
 });
+
+  return MediumEditorMultiPlaceholders;
+}()));
