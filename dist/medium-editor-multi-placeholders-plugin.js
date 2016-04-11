@@ -1,16 +1,13 @@
 (function (root, factory) {
   'use strict';
   if (typeof module === 'object') {
-    module.exports = factory;
+    module.exports = factory(require("medium-editor"));
   } else if (typeof define === 'function' && define.amd) {
-    define(function () {
-      return factory;
-    });
+    define(["medium-editor"], factory);
   } else {
-    root.MediumEditor = factory;
+    root.MediumEditorMultiPlaceholders = factory(root.MediumEditor);
   }
-}(this, function () {
-
+}(this, function (MediumEditor) {
   'use strict';
 
 var MediumEditorMultiPlaceholders = MediumEditor.Extension.extend({
@@ -76,4 +73,4 @@ var MediumEditorMultiPlaceholders = MediumEditor.Extension.extend({
 });
 
   return MediumEditorMultiPlaceholders;
-}()));
+}));

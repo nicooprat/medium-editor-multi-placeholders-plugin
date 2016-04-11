@@ -2,7 +2,7 @@
   "name": "medium-editor-multi-placeholders-plugin",
   "version": "1.0.0",
   "description": "A plugin for adding multiple placeholders in MediumEditor",
-  "main": "index.js",
+  "main": "dist/medium-editor-multi-placeholders-plugin.js",
   "directories": {
     "example": "examples"
   },
@@ -24,6 +24,9 @@
     "url": "https://github.com/smiled0g/medium-editor-multi-placeholders-plugin/issues"
   },
   "homepage": "https://github.com/smiled0g/medium-editor-multi-placeholders-plugin#readme",
+  "dependencies": {
+    "medium-editor": "^5.15.0"
+  },
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-cli": "^0.1.13",
