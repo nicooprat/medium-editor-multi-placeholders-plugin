@@ -40,6 +40,10 @@ First thing: don't forget to load the plugin **after** MediumEditor
 <script src="dist/medium-editor-multi-placeholders-plugin.min.js"></script>
 ```
 
+```node
+var MediumEditorMultiPlaceholders = require("medium-editor-multi-placeholders-plugin");
+```
+
 Now when you create MediumEditor instance, just disable normal placeholder and specify the extension and placeholder options:
 ```js
 var editor = new MediumEditor('#editor', {
